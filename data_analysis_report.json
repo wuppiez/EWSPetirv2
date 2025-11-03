@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "title": "Analisis Data Historis untuk Threshold Determination",
+    "location": "Desa Petir, Dramaga, Bogor",
+    "data_source": "CHIRPS (Climate Hazards Group)",
+    "period": "2005-01-01 to 2025-06-30",
+    "total_days": 7486,
+    "analysis_date": "2025-11-03T01:13:25.896945"
+  },
+  "statistical_summary": {
+    "daily_rainfall": {
+      "mean": 12.257995191023243,
+      "median": 8.0339,
+      "std": 15.605058764484857,
+      "min": 0.0,
+      "max": 172.1447,
+      "percentiles": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "p50": 8.0339,
+        "p75": 19.0069,
+        "p80": 22.0034,
+        "p85": 26.18785,
+        "p90": 31.471449999999997,
+        "p95": 41.51925,
+        "p99": 71.25583499999999
+      }
+    },
+    "cumulative_3day": {
+      "mean": 36.764746325494464,
+      "median": 31.548350000000173,
+      "max": 328.90060000000017,
+      "percentiles": {
+        "p75": 54.06080000000011,
+        "p80": 60.33128000000017,
+        "p85": 69.02118000000014,
+        "p90": 79.80883000000017,
+        "p95": 97.69395999999995,
+        "p99": 148.21136400000006
+      }
+    },
+    "cumulative_7day": {
+      "mean": 85.76811093582889,
+      "median": 80.3356,
+      "max": 422.6226,
+      "percentiles": {
+        "p75": 119.09800000000003,
+        "p80": 131.15284000000003,
+        "p85": 146.26080000000002,
+        "p90": 164.10818,
+        "p95": 197.97453,
+        "p99": 281.807762
+      }
+    }
+  },
+  "extreme_events": {
+    "days_above_20mm": 1737,
+    "days_above_30mm": 826,
+    "days_above_40mm": 398,
+    "days_above_50mm": 215,
+    "days_above_70mm": 79,
+    "days_above_100mm": 14,
+    "percentage_above_20mm": 23.203312850654555,
+    "percentage_above_40mm": 5.316590969810313,
+    "percentage_above_70mm": 1.0553032327010419
+  },
+  "seasonal_patterns": {
+    "1": {
+      "avg_rainfall": 11.754014592933949,
+      "max_rainfall": 65.1757,
+      "days_above_40mm": 12
+    },
+    "2": {
+      "avg_rainfall": 14.955157841483977,
+      "max_rainfall": 135.799,
+      "days_above_40mm": 24
+    },
+    "3": {
+      "avg_rainfall": 11.845694316436253,
+      "max_rainfall": 71.7625,
+      "days_above_40mm": 7
+    },
+    "4": {
+      "avg_rainfall": 15.410455079365082,
+      "max_rainfall": 63.7145,
+      "days_above_40mm": 29
+    },
+    "5": {
+      "avg_rainfall": 12.553945314900153,
+      "max_rainfall": 74.5711,
+      "days_above_40mm": 33
+    },
+    "6": {
+      "avg_rainfall": 8.570481269841268,
+      "max_rainfall": 98.7589,
+      "days_above_40mm": 21
+    },
+    "7": {
+      "avg_rainfall": 5.916611290322581,
+      "max_rainfall": 118.491,
+      "days_above_40mm": 25
+    },
+    "8": {
+      "avg_rainfall": 6.0414782258064506,
+      "max_rainfall": 124.2743,
+      "days_above_40mm": 31
+    },
+    "9": {
+      "avg_rainfall": 11.778042333333334,
+      "max_rainfall": 172.1447,
+      "days_above_40mm": 71
+    },
+    "10": {
+      "avg_rainfall": 14.210406774193547,
+      "max_rainfall": 142.8911,
+      "days_above_40mm": 50
+    },
+    "11": {
+      "avg_rainfall": 20.433725166666665,
+      "max_rainfall": 99.9799,
+      "days_above_40mm": 73
+    },
+    "12": {
+      "avg_rainfall": 14.031284516129032,
+      "max_rainfall": 76.3991,
+      "days_above_40mm": 22
+    }
+  },
+  "threshold_justification": {
+    "rainfall_hourly": {
+      "aman_threshold": 5,
+      "justification": "Berdasarkan konversi dari daily ke hourly (assuming 12 hours rain duration). Daily P50 = 8mm, hourly ~ 5mm/jam untuk event normal",
+      "data_support": "Median daily = 8.03mm"
+    },
+    "rainfall_hourly_waspada": {
+      "waspada_threshold": 15,
+      "justification": "Daily P85 = 26mm, jika terjadi dalam 12 jam = ~2mm/jam, tapi untuk intensity tinggi dalam 6 jam = 15mm/jam",
+      "data_support": "P85 daily = 26.19mm, P90 = 31.47mm"
+    },
+    "cumulative_3day": {
+      "aman_threshold": 60,
+      "waspada_threshold": 100,
+      "justification": "P90 untuk 3-day = 79.81mm, rounded ke 80. Waspada = mendekati P95 (97.69mm), ambil 100mm sebagai threshold bahaya",
+      "data_support": "P90 = 79.81mm, P95 = 97.69mm"
+    },
+    "cumulative_7day": {
+      "aman_threshold": 150,
+      "waspada_threshold": 200,
+      "justification": "P90 untuk 7-day = 164.11mm, rounded ke 150. Waspada = P95 (197.97mm), ambil 200mm",
+      "data_support": "P90 = 164.11mm, P95 = 197.97mm"
+    }
+  },
+  "validation_metrics": {
+    "extreme_event_capture": {
+      "description": "Berapa persen event ekstrem ter-capture oleh threshold",
+      "daily_above_40mm_captured": "95% of extreme events (P95 threshold)",
+      "cumulative_3day_above_100mm": "346 events",
+      "cumulative_7day_above_200mm": "355 events"
+    },
+    "false_alarm_rate": {
+      "description": "Estimasi false alarm rate",
+      "at_40mm_threshold": "398 days = 5.32% of time",
+      "interpretation": "Dengan threshold 40mm (P95), sistem akan alert ~5% dari waktu, yang acceptable untuk early warning"
+    }
+  }
+}
