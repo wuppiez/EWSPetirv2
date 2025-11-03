@@ -819,9 +819,8 @@ with st.sidebar:
 
 # Footer
 st.divider()
-st.caption("🔬 EWS Longsor v2.1 - Advanced Risk Scoring System with Open-Meteo API")
-st.caption("📊 Berdasarkan analisis data historis CHIRPS 2005-2025 (20.5 tahun)")
-st.caption("📡 Data real-time dari Open-Meteo API (FREE!) | 🤖 Telegram Auto-notification")
-st.caption(f"💾 Cache: 10 menit | 📁 Historical data: {len(st.session_state.historical_data)} points")
-st.caption("🌐 Open-Meteo: Open-source weather API by https://open-meteo.com")
-st.caption("✅ FIXED: Timezone comparison error resolved")
+st.caption("EWS Longsor v2.0 - Advanced Risk Scoring System with Open-Meteo API")
+st.caption("Berdasarkan analisis data historis CHIRPS dan BMKG 2005-2025 (20 tahun)")
+st.caption("Data real-time dari Open-Meteo API (FREE) | Telegram Auto-notification")
+st.caption(f"Cache: 10 menit | Historical data: {len(st.session_state.historical_data)} points")
+st.caption("Open-Meteo: Open-source weather API by https://open-meteo.com")
