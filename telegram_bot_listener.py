@@ -22,7 +22,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # ==================== KONFIGURASI ====================
-TELEGRAM_BOT_TOKEN = "8271915231:AAGyCe7dKqbZMmrAs4_XHlfes-JaHNPJTeE"
+TELEGRAM_BOT_TOKEN = "8443676707:AAH65PQmfs4lbinrrXWWw1UypuTT2B9t1Yc"
 SUBSCRIBERS_FILE = "telegram_subscribers.json"
 # ====================================================
 
@@ -372,3 +372,4 @@ if __name__ == "__main__":
         print(f"\n❌ Error: {e}")
         import traceback
         traceback.print_exc()
+
